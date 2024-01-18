@@ -8,7 +8,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["./MachineDetailsMVC.csproj", "MachineDetailsMVC/"]
-RUN dotnet restore "MachineDetailsMVC/MachineDetailsMVC.csproj"
+RUN dotnet restore "./MachineDetailsMVC.csproj"
 COPY . .
 WORKDIR "/src/MachineDetailsMVC"
 RUN dotnet build "MachineDetailsMVC.csproj" -c Release -o /app/build
