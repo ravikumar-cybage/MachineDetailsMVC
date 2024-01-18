@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  machinedetailsmvc:
+    image: ${DOCKER_REGISTRY-}machinedetailsmvc
+    build:
+      context: .
+      dockerfile: MachineDetailsMVC/Dockerfile
