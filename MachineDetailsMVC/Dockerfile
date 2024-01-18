@@ -11,7 +11,7 @@ COPY ["./MachineDetailsMVC.csproj", "MachineDetailsMVC/"]
 RUN dotnet restore "MachineDetailsMVC/MachineDetailsMVC.csproj"
 COPY . .
 WORKDIR "/src/MachineDetailsMVC"
-RUN dotnet build "./MachineDetailsMVC.csproj" -c Release -o /app/build
+RUN dotnet build "MachineDetailsMVC.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "MachineDetailsMVC.csproj" -c Release -o /app/publish /p:UseAppHost=false
