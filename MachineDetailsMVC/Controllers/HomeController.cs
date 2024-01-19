@@ -2,6 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 public class HomeController : Controller
 {
@@ -12,6 +15,9 @@ public class HomeController : Controller
         _httpClient = httpClientFactory.CreateClient();
         _httpClient.BaseAddress =
             new Uri("https://172.17.0.3:80/");
+
+    _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
+        ServicePointManager.ServerCertificateValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;
     }
 
     public async Task<IActionResult> Index()
