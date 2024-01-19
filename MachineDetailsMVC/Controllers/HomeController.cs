@@ -12,8 +12,6 @@ public class HomeController : Controller
         _httpClient = httpClientFactory.CreateClient();
         _httpClient.BaseAddress =
             new Uri("https://172.17.0.3:80/");
-
-    _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
  
     }
 
