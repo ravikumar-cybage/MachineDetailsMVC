@@ -11,7 +11,7 @@ public class HomeController : Controller
     {
         _httpClient = httpClientFactory.CreateClient();
         _httpClient.BaseAddress =
-            new Uri("http://172.17.0.3:80/");
+            new Uri("http://172.17.0.3:80/api/Machine");
  
     }
 
