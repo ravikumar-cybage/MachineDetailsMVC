@@ -17,7 +17,11 @@ public class HomeController : Controller
             new Uri("https://172.17.0.3:80/");
 
     _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
-        ServicePointManager.ServerCertificateValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;
+    var handler = new HttpClientHandler
+    {
+        ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => true
+    };
+    _httpClient = new HttpClient(handler);
     }
 
     public async Task<IActionResult> Index()
