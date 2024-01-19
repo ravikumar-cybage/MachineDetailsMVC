@@ -17,7 +17,7 @@ public class HomeController : Controller
 
     public async Task<IActionResult> Index()
     {
-        var response = await _httpClient.GetAsync("MachineDetails");
+        var response = await _httpClient.GetAsync("details");
        if (response != null)
         {
             var resultString = await response.Content.ReadAsStringAsync();
