@@ -11,13 +11,13 @@ public class HomeController : Controller
     {
         _httpClient = httpClientFactory.CreateClient();
         _httpClient.BaseAddress =
-            new Uri("http://172.17.0.2:80/api/Machine");
+            new Uri("http://172.17.0.2:80/api/");
  
     }
 
     public async Task<IActionResult> Index()
     {
-        var response = await _httpClient.GetAsync("details");
+        var response = await _httpClient.GetAsync("machine");
        if (response != null)
         {
             var resultString = await response.Content.ReadAsStringAsync();
