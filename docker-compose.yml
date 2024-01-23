@@ -5,4 +5,4 @@ services:
     image: ${DOCKER_REGISTRY-}machinedetailsmvc
     build:
       context: .
-      dockerfile: MachineDetailsMVC/Dockerfile
+      dockerfile: Dockerfile
